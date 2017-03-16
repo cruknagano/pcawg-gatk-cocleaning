@@ -35,17 +35,21 @@ inputs:
     inputBinding: 
       prefix: -I
       position: 5
-    secondaryFiles:
-      - .bai
+
+  input_bam_bai:
+    type: File
 
   reference:
     type: File
     inputBinding: 
       prefix: -R
       position: 4
-    secondaryFiles:
-      - .fai
-      - ^.dict
+
+  reference_fai:
+    type: File
+
+  reference_dict:
+    type: File
 
   emit_oq:
     type: ["null", boolean]
@@ -60,9 +64,12 @@ inputs:
       position: 7
 
 outputs: 
-  output:
+  bam:
     type: File
     outputBinding: 
       glob: "output.bam"
-    secondaryFiles:
-      - .bai
+
+  bai:
+    type: File
+    outputBinding: 
+      glob: "output.bam.bai"

@@ -1,12 +1,24 @@
 tumor_bam: 
   class: File
   path: /mnt/gatk-cocleaning-resources/testexome.pair0.normal.bam
+tumor_bai: 
+  class: File
+  path: /mnt/gatk-cocleaning-resources/testexome.pair0.normal.bam.bai
 normal_bam: 
   class: File
   path: /mnt/gatk-cocleaning-resources/testexome.pair0.tumour.bam
+normal_bai: 
+  class: File
+  path: /mnt/gatk-cocleaning-resources/testexome.pair0.tumour.bam.bai
 reference:
   class: File
   path: /mnt/gatk-cocleaning-resources/Homo_sapiens_assembly19.fasta
+reference_fai:
+  class: File
+  path: /mnt/gatk-cocleaning-resources/Homo_sapiens_assembly19.fasta.fai
+reference_dict:
+  class: File
+  path: /mnt/gatk-cocleaning-resources/Homo_sapiens_assembly19.dict
 knownIndels: 
   - class: File
     path: /mnt/gatk-cocleaning-resources/1000G_phase1.indels.hg19.sites.fixed.vcf

@@ -23,7 +23,6 @@ arguments:
     valueFrom: "tumor_realigned.bam"
     prefix: -o
     position: 1
-
   - 
     valueFrom: "normal_realigned.bam"
     prefix: -o
@@ -43,25 +42,30 @@ inputs:
     inputBinding:
       prefix: -I
       position: 5
-    secondaryFiles:
-      - .bai
+
+  tumor_bai:
+    type: File
 
   normal_bam:
     type: File
     inputBinding:
       prefix: -I
       position: 6
-    secondaryFiles:
-      - .bai
+
+  normal_bai:
+    type: File
 
   reference:
     type: File
-    inputBinding:
+    inputBinding: 
       prefix: -R
       position: 7
-    secondaryFiles:
-      - .fai
-      - ^.dict
+
+  reference_fai:
+    type: File
+
+  reference_dict:
+    type: File
 
   knownIndels:
     type: 
@@ -80,16 +84,22 @@ inputs:
       position: 9
       
 outputs:
-  tumor_realigned:
+  tumor_realigned_bam:
     type: File
     outputBinding:
       glob: "tumor_realigned.bam"
-    secondaryFiles:
-      - .bai
 
-  normal_realigned:
+  tumor_realigned_bai:
+    type: File
+    outputBinding:
+      glob: "tumor_realigned.bam.bai"
+
+  normal_realigned_bam:
     type: File
     outputBinding:
       glob: "normal_realigned.bam"
-    secondaryFiles:
-      - .bai
+
+  normal_realigned_bai:
+    type: File
+    outputBinding:
+      glob: "normal_realigned.bam.bai"
