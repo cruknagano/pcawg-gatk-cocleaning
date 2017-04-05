@@ -15,7 +15,19 @@ inputs:
       - type: array
         items: File
 
+  knownIndelsTbi:
+    type:
+      - "null"
+      - type: array
+        items: File
+
   knownSites:
+    type: 
+      - "null"
+      - type: array
+        items: File
+
+  knownSitesTbi:
     type: 
       - "null"
       - type: array
@@ -81,6 +93,7 @@ steps:
       reference_fai: reference_fai
       reference_dict: reference_dict
       knownIndels: knownIndels
+      knownIndelsTbi: knownIndelsTbi
     out:
       - target_intervals
 
@@ -94,7 +107,6 @@ steps:
       reference: reference
       reference_fai: reference_fai
       reference_dict: reference_dict
-      knownIndels: knownIndels
       intervals: realigner_target_creator/target_intervals
     out:
       - tumor_realigned
@@ -111,6 +123,7 @@ steps:
       reference_fai: reference_fai
       reference_dict: reference_dict
       knownSites: knownSites
+      knownSitesTbi: knownSitesTbi
     out:
       - output_report
           
@@ -136,6 +149,7 @@ steps:
       reference_fai: reference_fai
       reference_dict: reference_dict
       knownSites: knownSites
+      knownSitesTbi: knownSitesTbi
     out:
       - output_report
           
