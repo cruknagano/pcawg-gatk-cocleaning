@@ -17,14 +17,16 @@ requirements:
 baseCommand: 
   - "java"
   - "-jar"
+  - "-Xmx128G"
   - "/opt/GenomeAnalysisTK.jar"
   - "-T"
   - "PrintReads"
   - "--disable_auto_index_creation_and_locking_when_reading_rods"
+  - "-nct 32"
 
 arguments: 
-  - valueFrom: $(runtime.cores)
-    prefix: -nct
+#  - valueFrom: $(runtime.cores)
+#    prefix: -nct
 
   - valueFrom: $(inputs.input_bam.nameroot).cleaned.bam
     prefix: -o
