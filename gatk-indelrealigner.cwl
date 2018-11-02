@@ -14,10 +14,12 @@ requirements:
 baseCommand:
   - "java"
   - "-jar"
+  - "-Xmx128G"
   - "/opt/GenomeAnalysisTK.jar"
   - "-T"
   - "IndelRealigner"
   - "--disable_auto_index_creation_and_locking_when_reading_rods"
+  - "-nct 32"
 
 arguments:
   - valueFrom: .realigned.bam
