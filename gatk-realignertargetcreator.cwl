@@ -14,17 +14,19 @@ requirements:
 baseCommand:
   - "java"
   - "-jar"
+  - "-Xmx128G"
   - "/opt/GenomeAnalysisTK.jar"
   - "-T"
   - "RealignerTargetCreator"
   - "--disable_auto_index_creation_and_locking_when_reading_rods"
+  - "-nt 32"
 
 arguments:
   - valueFrom: forIndelRealigner.intervals
     prefix: -o 
 
-  - valueFrom: $(runtime.cores)
-    prefix: -nt
+#  - valueFrom: $(runtime.cores)
+#    prefix: -nt
 
 inputs:
   input_bam:
