@@ -12,14 +12,16 @@ requirements:
 baseCommand: 
   - "java"
   - "-jar"
+  - "-Xmx128G"
   - "/opt/GenomeAnalysisTK.jar"
   - "-T"
   - "BaseRecalibrator"
   - "--disable_auto_index_creation_and_locking_when_reading_rods"
+  - "-nct 32"
 
 arguments:
-  - valueFrom: $(runtime.cores)
-    prefix: -nct
+#  - valueFrom: $(runtime.cores)
+#    prefix: -nct
 
   - valueFrom: recal_data.table
     prefix: -o
