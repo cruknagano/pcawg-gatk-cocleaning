@@ -3,7 +3,7 @@ cwlVersion: v1.0
 
 hints:
   - class: ResourceRequirement
-    coresMin: 8
+    coresMin: 32
 
 requirements: 
   - class: DockerRequirement
@@ -17,11 +17,10 @@ baseCommand:
   - "-T"
   - "BaseRecalibrator"
   - "--disable_auto_index_creation_and_locking_when_reading_rods"
-  - "-nct 32"
-
+ 
 arguments:
-#  - valueFrom: $(runtime.cores)
-#    prefix: -nct
+  - valueFrom: $(runtime.cores)
+     prefix: -nct
 
   - valueFrom: recal_data.table
     prefix: -o
