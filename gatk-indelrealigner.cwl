@@ -4,8 +4,8 @@ label: GATK IndelRealigner
 
 hints:
   - class: ResourceRequirement
-    coresMin: 8
-    ramMin: 32
+    coresMin: 32
+    ramMin: 128
 
 requirements: 
   - class: DockerRequirement
